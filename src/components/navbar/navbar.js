@@ -5,7 +5,7 @@ import Logo from '../../assets/img/pokeball.png'
 function Navbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand">
+      <nav className="navbar navbar-expand navBar">
         <img className="logo" src={Logo} alt="Logo pokeball"/>
         <a className="logoText" href="/">PokéDex</a>
 

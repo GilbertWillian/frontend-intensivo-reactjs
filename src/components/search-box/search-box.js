@@ -8,7 +8,7 @@ function SearchBox() {
       <div className="container search-box">
         <form className="flex">
           <input className="form-control form-control-lg" placeholder="Qual o Pokémon?" />
-          <button className="btn btn-secondary btn-lg" type="submit">Search</button>
+          <button className="btn btn-secondary btn-lg button-search" type="submit">Search</button>
         </form>
       </div>
 

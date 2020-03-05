@@ -1,7 +1,14 @@
+
+.button-search {
+  background-color: #F90014;
+  border-width: 0;
+}
+
 .search-box {
   margin-top: 60px;
   margin-bottom: 60px;
 }
+
 
 .results-box {
   padding: 50px 0;
