@@ -1,23 +1,30 @@
-
 .button-search {
   background-color: #F90014;
   border-width: 0;
 }
 
+.img {
+  background-image: url("../../assets/img/background-search.jpg");
+  background-position: center center;
+  height: auto;
+  /* max-width: ; */
+}
+
 .search-box {
   margin-top: 60px;
   margin-bottom: 60px;
+    
 }
-
 
 .results-box {
   padding: 50px 0;
-  
+
 }
 /*----Card----*/
 
 .cards {
-  max-width: 18rem
+  max-width: 18rem;
+  max-height: 20rem;
 }
 
 .bg-card {
