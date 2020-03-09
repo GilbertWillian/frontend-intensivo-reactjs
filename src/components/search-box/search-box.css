@@ -1,7 +1,7 @@
+/*----Search----*/
 .button-search {
   background-color: #F90014;
-  border-width: 0;
-  
+  /*border-width: 0;*/
 }
 
 .img {
@@ -11,9 +11,9 @@
 }
 
 .search-box {
-  padding-top: 100px;
-  padding-bottom: 100px;
-    
+  padding: 140px 0;   
+  margin-top: 0; 
+  margin-bottom: 0;
 }
 
 .results-box {
@@ -26,10 +26,17 @@
   max-width: 18rem;
   max-height: 20rem;
   border: 0;
+  border-radius: 10px;
 }
 
 .bg-card {
   background-color: #F90014;
+}
+
+.nome-poke {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .types {
