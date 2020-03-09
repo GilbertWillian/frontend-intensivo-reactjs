@@ -14,7 +14,7 @@ function Navbar() {
             <a className="nav-item" href="/">Lista de Pokémons</a>
           </li>
           <li>
-            <a className="nav-item" href="/">Gerações</a>
+            <a className="nav-item" href="/">Counters</a>
           </li>
           <li>
             <a className="nav-item" href="/">Sobre</a>
