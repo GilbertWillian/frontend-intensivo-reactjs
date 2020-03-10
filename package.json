@@ -30,5 +30,13 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://pokeapi.co"
+
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+ "proxy": "https://pokeapi.co"
 }

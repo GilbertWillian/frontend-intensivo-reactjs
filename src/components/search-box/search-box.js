@@ -9,30 +9,63 @@ class SearchBox extends React.Component {
     super(props)
 
     this.state = {
-      pokemon: {}
+      pokemon: {},
+      search: undefined
     }
   }
 
-  componentDidMount() {
-    PokeDexService.getPokeInfo()
+  //Funcao para exibir uma lista de pokemons
+  pokemonList = () => {
+    let pokeList = []
+
+    /*await*/ PokeDexService.getPokeList()
+      .then(response => {
+        pokeList = response.results
+      })
+
+    pokeList.map(pokemon => {
+      return PokeDexService.getPokeInfo(pokemon.name)
+        .then((response) => {
+          pokemon.type = response.types[0].type.name
+          pokemon.img = response.sprites.front_default
+        })
+    })
+
+    this.setState({ pokeList });
+  }
+
+  search(event) {
+    const search = event.target.search.value
+
+
+    PokeDexService.getPokeInfo(search)
       .then((response) => {
         this.setState({
           pokemon: response
         })
       })
+
+    //pokemonList()
+
+    event.preventDefault() // Tira o recarregamento da página
+  }
+
+  upadateSearch(event) {
+    this.setState({
+      search: event.target.value
+    })
   }
 
   renderSearchBox() {
     return (
       <div className="img">
         <div className="container search-box">
-          <form className="flex">
-            <input className="form-control form-control-lg pesquisa" placeholder="Qual o Pokémon?" />
+          <form className="flex" onSubmit={this.search.bind(this)}>
+            <input className="form-control form-control-lg pesquisa" name="search" placeholder="Qual o Pokémon?" onChange={this.upadateSearch.bind(this)} value={this.state.search} />
             <button className="btn btn-secondary btn-lg button-search" type="submit">Pesquisar</button>
           </form>
         </div>
       </div>
-
     )
   }
 
@@ -43,9 +76,10 @@ class SearchBox extends React.Component {
           <div className="results-box">
 
             {/* Card */}
-            <div className="card bg-card mb-3 cards text-color"> {/*text-white*/}
+            <div className="card mb-3 card-color-header cards text-color"> {/*text-white bg-card*/}
               <div className="card-header nome-poke">Nome do Pokémon</div>
-              <div className="card-body">
+              <div className="card-body ">
+                
                 {/* Tipos */}
                 <div className="box-type1">
                   <h5 className="card-title">Tipos</h5>
@@ -58,6 +92,7 @@ class SearchBox extends React.Component {
                     </div>
                   </div>
                 </div>
+                
                 {/* Fraquezas */}
                 <div className="box-type2">
                   <h5 className="card-title">Fraquezas</h5>
@@ -71,6 +106,7 @@ class SearchBox extends React.Component {
                   </div>
                 </div>
                 {/*   */}
+
               </div>
             </div>
           </div>
@@ -94,5 +130,4 @@ class SearchBox extends React.Component {
     )
   }
 }
-
 export default SearchBox
