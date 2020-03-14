@@ -82,7 +82,7 @@ class SearchBox extends React.Component {
                 
                 {/* Tipos */}
                 <div className="box-type1">
-                  <h5 className="card-title">Tipos</h5>
+                  <h6 className="card-title">Tipos</h6>
                   <div className="types">
                     <div className="type-poke">
                       <p>Fogo</p>
@@ -95,7 +95,7 @@ class SearchBox extends React.Component {
                 
                 {/* Fraquezas */}
                 <div className="box-type2">
-                  <h5 className="card-title">Fraquezas</h5>
+                  <h6 className="card-title">Fraquezas</h6>
                   <div className="types">
                     <div className="type-poke">
                       <p>Terra</p>
